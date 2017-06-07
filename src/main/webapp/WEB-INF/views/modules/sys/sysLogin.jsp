@@ -71,7 +71,7 @@
 		</div>
 	</form>
 	<div class="footer">
-		Copyright &copy; ${fns:getConfig('copyrightYear')}-2088 <a  style="color: white;" href="#">${fns:getConfig('productName')}</a> - Powered By <a href="#" style="color: white;" target="_blank">WUJIAJUN-TEAM</a> ${fns:getConfig('version')} 
+		Copyright &copy; ${fns:getConfig('copyrightYear')}-2088 <a  style="color: white;" href="#">${fns:getConfig('productName')}</a> - Powered By <a href="#" style="color: white;" target="_blank">福建国通信息科技有限公司</a> ${fns:getConfig('version')} 
 	</div>
 	<script src="${ctxStatic}/flash/zoom.min.js" type="text/javascript"></script>
 

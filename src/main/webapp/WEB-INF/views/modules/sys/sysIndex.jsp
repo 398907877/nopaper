@@ -149,7 +149,7 @@
 	<div id="main">
 		<div id="header" class="navbar navbar-fixed-top">
 			<div class="navbar-inner">
-				<div class="brand"><span id="productName">${fns:getConfig('productName')}</span></div>
+				<div class="brand"><span id="productName">GOTOP-国通科技</span></div>
 				<ul id="userControl" class="nav pull-right">
 					<li><a href="${pageContext.request.contextPath}${fns:getFrontPath()}/index-${fnc:getCurrentSiteId()}.html" target="_blank" title="访问网站主页"><i class="icon-home"></i></a></li>
 					<li id="themeSwitch" class="dropdown">
@@ -222,7 +222,7 @@
 				</div>
 			</div>
 		    <div id="footer" class="row-fluid">
-	            Copyright &copy; ${fns:getConfig('copyrightYear')} ${fns:getConfig('productName')}-2088 - Powered By <a href="#" target="_blank">WUJIAJUN-TEAM</a> ${fns:getConfig('version')}
+	            Copyright &copy; ${fns:getConfig('copyrightYear')} ${fns:getConfig('productName')}-2088 - Powered By <a href="#" target="_blank">福建国通信息科技有限公司</a> ${fns:getConfig('version')}
 			</div>
 		</div>
 	</div>

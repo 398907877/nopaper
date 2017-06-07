@@ -31,42 +31,63 @@
 			});
 		});
 	</script>
+	
+	<style type="text/css">
+	
+	.control-group{
+	
+	float:right;}
+	
+	</style>
 </head>
 <body>
 	<ul class="nav nav-tabs">
 	</ul><br/>
-	<div class="form-actions" style="padding-left:70px">
-			<input  class="btn btn-primary"  type="button" value="个人结算账户开户" />
-			<input  class="btn btn-primary"  type="button" value="个人电子银行服务" />
-			<input  class="btn btn-primary"  type="button" value="短信服务申请" />
-			<input  class="btn btn-primary"  type="button" value="网上支付通" />
-			<input  class="btn btn-primary"  type="button" value="缘卡外汇卡申请书" />
-			<input  class="btn btn-primary"  type="button" value="收汇申请" />
-			<input  class="btn btn-primary"  type="button" value="个人结汇" />
-			<br/>
-					<br/>
-							<br/>
-			<input  class="btn btn-primary"  type="button" value="涉外收入申请单" />
-			<input  class="btn btn-primary"  type="button" value="个人购汇业务" />
-			<input  class="btn btn-primary"  type="button" value="定期账户开户" />
-			<input  class="btn btn-primary"  type="button" value="个人跨行汇款" />
-			<input  class="btn btn-primary"  type="button" value="大额跨行转账服务" />
-			<input  class="btn btn-primary"  type="button" value="挂失申请书" />
-		</div>
+	
+	
+	
 	<form:form id="inputForm" modelAttribute="fclWkJh"  method="post" class="form-horizontal" style="width:700px">
 		
-		<div class="control-group">
-			<label class="control-label">姓名:</label>
+		
+		
+		<div class="row">
+  <div class="span12">
+  
+ 
+ <div class="page-header">
+  <h1>开户信息录入 <small>提供自动回填和打印</small></h1>
+</div>
+    
+    
+    
+    <div class="row">
+      <div class="span4">  
+
+
+
+                   
+                          
+                         
+		
+		
+		<div class="control-group left">
+			<label  class="control-label ">姓名:</label>
 			<div class="controls">
 				<form:input path="money"  class="required"/>
-				<span class="help-inline"><font color="red">*</font> </span>
-				<label class="control-label" style="float:none;width:80px">性别:</label>
-				<form:input path="money"  class="required" style="width:50px;"/>
-				<span class="help-inline"><font color="red">*</font> </span>
+
 			</div>
-			
-			
 		</div>
+		
+				<div class="control-group">
+			<label class="control-label">xingbie:</label>
+			<div class="controls">
+				<form:input path="money"  class="required"/>
+
+			</div>
+		</div>
+		
+		
+		
 		<div class="control-group">
 			<label class="control-label">拼音:</label>
 			<div class="controls">
@@ -74,14 +95,19 @@
 			</div>
 			
 		</div>
+
+
 		<div class="control-group">
-			<label class="control-label">出生日期:</label>
+			<label class="control-label">chushengriqi:</label>
 			<div class="controls">
-                <form:input path="money"  class="required"/>
-                <label class="control-label" style="float:none;width:95px">民族:</label>
-                <form:input path="money"  class="required" style="width:50px;"/>
+				<form:input path="money" class="required"/>
 			</div>
-			
+		</div>
+				<div class="control-group">
+			<label class="control-label">mingzu:</label>
+			<div class="controls">
+				<form:input path="money" class="required"/>
+			</div>
 		</div>
 		<div class="control-group">
 			<label class="control-label">证件号码:</label>
@@ -96,7 +122,14 @@
 				<form:input path="money" class="required"/>
 			</div>
 		</div>
-		<div class="control-group">
+		
+
+		
+
+				   </div>
+		      <div class="span4"> 
+		      
+		      <div class="control-group">
 			<label class="control-label">发证机关:</label>
 			<div class="controls">
 				<form:input path="money" class="required"/>
@@ -138,6 +171,30 @@
 				<form:input path="money"  class="required"/>
 			</div>
 		</div>
+		      
+		     
+		
+		
+		</div>
+		
+		
+		      <div class="span4"> 
+		      
+		      
+		      <img src="https://www.baidu.com/img/gaokao_pc_22894732028445b2e2caaf21ebc5e508.png" class="img-rounded">
+		      
+		      <img src="https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=2004621097,1850558574&fm=26&gp=0.jpg" class="img-rounded">
+		      
+
+		      
+		      
+		      </div>
+    </div>
+    
+    
+  </div>
+</div>
+
 		<div class="form-actions" style="padding-left:70px">
 			<input  class="btn btn-primary"  type="button" value="清除内容" />
 			<input  class="btn btn-primary"  type="button" value="开户人资料" />
@@ -146,13 +203,9 @@
 			<input  class="btn btn-primary"  type="button" value="打印凭单" />
 			<input  class="btn btn-primary"  type="button" value="业务办理" />
 		</div>
+
 	</form:form>
 
-	<form:form id="inputForm1" modelAttribute="fclWkJh"  method="post" class="form-horizontal" style="width:300px;margin-left:800px;margin-top:-650px">
-		<input   class="btn btn-info" type='file' id='iptfileupload' onchange='show()' value='1111' /></input>
- <img src='' alt='' id='img' />
-<input     class="btn btn-info"   type='file' id='iptfileupload1' onchange='show1()' value='' />
- <img src='' alt='' id='img1' />
  
  
  
@@ -237,6 +290,6 @@
 		 }
 
  </script>
-	</form:form>
+
 </body>
 </html>
