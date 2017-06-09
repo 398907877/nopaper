@@ -32,13 +32,15 @@
 		});
 	</script>
 	
-	<style type="text/css">
 	
+	<style type="text/css">
 	.control-group{
 	
-	float:right;}
+	float:right;
+	}
 	
 	</style>
+
 </head>
 <body>
 	<ul class="nav nav-tabs">
@@ -70,21 +72,52 @@
                          
 		
 		
-		<div class="control-group left">
+		<div class="control-group ">
 			<label  class="control-label ">姓名:</label>
+			<div class="controls">
+				<input class="required" value="wujiajun" type="text">
+
+			</div>
+		</div>
+		
+		
+	
+		
+<!-- 		<div class="form-group"> -->
+<!--     <label for="exampleInputName2">Name</label> -->
+<!--     <input type="text" class="form-control" id="exampleInputName2" placeholder="Jane Doe"> -->
+<!--   </div> -->
+		
+<!-- 			<br/> -->
+		
+<!-- 		<br/> -->
+		
+<!-- 				<div class="form-group"> -->
+<!--     <label for="exampleInputName2">sex</label> -->
+<!--     		<select class="form-control"> -->
+<!--   <option>1</option> -->
+<!--   <option>2</option> -->
+<!--   <option>3</option> -->
+<!--   <option>4</option> -->
+<!--   <option>5</option> -->
+<!-- </select> -->
+<!--   </div> -->
+		
+		
+
+		
+		
+		
+				
+		<div class="control-group ">
+			<label  class="control-label ">xingbie:</label>
 			<div class="controls">
 				<form:input path="money"  class="required"/>
 
 			</div>
 		</div>
 		
-				<div class="control-group">
-			<label class="control-label">xingbie:</label>
-			<div class="controls">
-				<form:input path="money"  class="required"/>
 
-			</div>
-		</div>
 		
 		
 		
@@ -197,11 +230,11 @@
 
 		<div class="form-actions" style="padding-left:70px">
 			<input  class="btn btn-primary"  type="button" value="清除内容" />
-			<input  class="btn btn-primary"  type="button" value="开户人资料" />
-			<input  class="btn btn-primary"  type="button" value="代理人资料" />
+			<input  class="btn btn-primary"  type="button" value="开户人资料识读" />
+			<input  class="btn btn-primary"  type="button" value="自动预填单" />
 			<input  class="btn btn-primary"  type="button" value="联网核查" />
 			<input  class="btn btn-primary"  type="button" value="打印凭单" />
-			<input  class="btn btn-primary"  type="button" value="业务办理" />
+			
 		</div>
 
 	</form:form>

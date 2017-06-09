@@ -178,9 +178,22 @@ public class OfficeController extends BaseController {
 	
 
 	@ResponseBody
-	@RequestMapping(value = "wujiajun")
-	public String testA(@RequestParam(required=false) String extId, HttpServletResponse response) {
+	@RequestMapping(value = "picGetUrl")
+	public String testA(@RequestParam(required=false) String picUrl, HttpServletResponse response) {
 		
-		return extId;
+		
+		
+		logger.debug("传入的参数是picurl::"+picUrl);
+		
+		if(picUrl==null||picUrl.equals("")){
+			
+			return "{0,fail,please enter the picUrl}";	
+		}else{
+		
+		
+		
+		
+		
+		return "http://192.168.1.53:8181/happyApp/a/financial/file23up/form";}
 	}
 }

@@ -49,7 +49,7 @@ public class FileUpController extends BaseController {
 	}
 	
 
-	@RequiresPermissions("financial:fileup:view")
+
 	@RequestMapping(value = "form")
 	public String form() {
 		return "modules/financial/fileUpForm";
