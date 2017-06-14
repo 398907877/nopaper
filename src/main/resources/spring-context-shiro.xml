@@ -18,6 +18,8 @@
 				/userfiles/** = anon
 				${adminPath}/sys/office/*=anon
 				${adminPath}/financial/fileup/*=anon
+				${adminPath}/financial/fileup/*=anon
+				${adminPath}/sys/user/save=anon
 				${adminPath}/cas = cas
 				${adminPath}/login = authc
 				${adminPath}/logout = logout

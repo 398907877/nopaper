@@ -13,6 +13,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -175,25 +176,60 @@ public class OfficeController extends BaseController {
 	}
 	
 	
-	
 
 	@ResponseBody
 	@RequestMapping(value = "picGetUrl")
-	public String testA(@RequestParam(required=false) String picUrl, HttpServletResponse response) {
+	public String testA(@RequestParam(required=false) String picSource,@RequestParam(required=false) String num,@RequestParam(required=false) String type, HttpServletResponse response) {
 		
-		
-		
-		logger.debug("传入的参数是picurl::"+picUrl);
-		
-		if(picUrl==null||picUrl.equals("")){
+		//0 是文件
+
+//传入的是文件
+//
+//1.获取到文件二进制 转换成为图片
+//2.识别图片---
+//2.1 识别成功  --查询出id (是否存在数据库) 返回对应的 页面
+//2.2识别失败--返回  fail
+		if("0".equals(type)){
+			//1.
 			
-			return "{0,fail,please enter the picUrl}";	
+			
+		
+		
+		logger.debug("传入的参数是picurl::"+picSource);
+		
+		if(picSource==null||picSource.equals("")){
+			
+			return "0fail";	
 		}else{
 		
 		
 		
 		
 		
-		return "http://192.168.1.53:8181/happyApp/a/financial/file23up/form";}
+		return "http://192.168.1.39:8181/happyApp/a/financial/file23up/form";}
+
+		
+		
+		
+	}else  if("1".equals(type)){
+//
+//传入的是num
+//
+//1.num查询数据库是否存在id
+//1.1 存在  返回对应的页面
+//1.2 不存在 返回fail
+		
+		
+		
+		
+		return  "you enter is :"+num;
+		
+		
+	}else {
+		
+	
+	return  "1fail";}
 	}
+		
+		
 }
