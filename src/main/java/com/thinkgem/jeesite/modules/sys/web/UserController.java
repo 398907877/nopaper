@@ -13,6 +13,8 @@ import javax.validation.ConstraintViolationException;
 
 import com.thinkgem.jeesite.modules.sys.entity.*;
 import com.thinkgem.jeesite.modules.sys.utils.DictUtils;
+
+import org.activiti.engine.impl.util.json.JSONObject;
 import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -25,6 +27,11 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import com.alibaba.druid.support.json.JSONParser;
+import com.alibaba.druid.support.json.JSONUtils;
+import com.fasterxml.jackson.core.JsonGenerator;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
 import com.thinkgem.jeesite.common.beanvalidator.BeanValidators;
@@ -142,7 +149,7 @@ public class UserController extends BaseController {
 		return "modules/sys/userRegistForm";
 	}
 
-	@RequiresPermissions("sys:user:edit")
+	
 	@RequestMapping(value = "save")
 	public String save(User user, HttpServletRequest request, Model model, RedirectAttributes redirectAttributes) {
 		if(Global.isDemoMode()){
@@ -490,4 +497,23 @@ public class UserController extends BaseController {
 //			}
 //		});
 //	}
+	
+	
+	public static void main(String[] args) throws JsonProcessingException {
+		
+		
+		Area  area= new Area();
+		area.setCode("ioioio");
+		area.setName("wujiajun");
+		
+		
+		 ObjectMapper mapper = new ObjectMapper(); 
+		 String  back=mapper.writeValueAsString(area);
+		 
+		 System.out.println(back);
+		 
+		
+		
+		
+	}
 }
