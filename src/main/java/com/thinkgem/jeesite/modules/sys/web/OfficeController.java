@@ -3,6 +3,7 @@
  */
 package com.thinkgem.jeesite.modules.sys.web;
 
+import java.io.File;
 import java.util.List;
 import java.util.Map;
 
@@ -24,6 +25,9 @@ import com.google.common.collect.Maps;
 import com.thinkgem.jeesite.common.config.Global;
 import com.thinkgem.jeesite.common.utils.StringUtils;
 import com.thinkgem.jeesite.common.web.BaseController;
+import com.thinkgem.jeesite.modules.nopaper.util.A;
+import com.thinkgem.jeesite.modules.nopaper.util.Base64Test;
+import com.thinkgem.jeesite.modules.nopaper.util.Base64ToPic;
 import com.thinkgem.jeesite.modules.sys.entity.Office;
 import com.thinkgem.jeesite.modules.sys.entity.User;
 import com.thinkgem.jeesite.modules.sys.service.OfficeService;
@@ -176,10 +180,10 @@ public class OfficeController extends BaseController {
 	}
 	
 	
-
+   
 	@ResponseBody
 	@RequestMapping(value = "picGetUrl")
-	public String testA(@RequestParam(required=false) String picSource,@RequestParam(required=false) String num,@RequestParam(required=false) String type, HttpServletResponse response) {
+	public String testA(@RequestBody  A get ,HttpServletResponse response) {
 		
 		//0 是文件
 
@@ -189,15 +193,21 @@ public class OfficeController extends BaseController {
 //2.识别图片---
 //2.1 识别成功  --查询出id (是否存在数据库) 返回对应的 页面
 //2.2识别失败--返回  fail
-		if("0".equals(type)){
+		if("0".equals(get.getType())){
 			//1.
 			
 			
 		
 		
-		logger.debug("传入的参数是picurl::"+picSource);
+		logger.debug("传入的参数是picurl::"+get.getPicSource());
+
+	  
+	     
+		Base64Test.GenerateImage(get.getPicSource());
 		
-		if(picSource==null||picSource.equals("")){
+		
+		
+		if(get.getPicSource()==null||get.getPicSource().equals("")){
 			
 			return "0fail";	
 		}else{
@@ -206,12 +216,12 @@ public class OfficeController extends BaseController {
 		
 		
 		
-		return "http://192.168.1.39:8181/happyApp/a/financial/file23up/form";}
+		return "0|http://192.168.1.39:8181/happyApp/a/financial/file23up/form";}
 
+		//	return "1|fail";}
 		
 		
-		
-	}else  if("1".equals(type)){
+	}else  if("1".equals(get.getType())){
 //
 //传入的是num
 //
@@ -222,10 +232,13 @@ public class OfficeController extends BaseController {
 		
 		
 		
-		return  "you enter is :"+num;
+		return  "2|fail";
 		
 		
-	}else {
+	}
+	
+	
+	else {
 		
 	
 	return  "1fail";}

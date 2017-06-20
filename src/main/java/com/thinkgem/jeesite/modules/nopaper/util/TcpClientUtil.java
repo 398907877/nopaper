@@ -8,6 +8,8 @@ import java.net.Socket;
 import java.net.URLEncoder;
 import java.security.MessageDigest;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
+
 public class TcpClientUtil {
 
     private String ip;
@@ -29,7 +31,7 @@ public class TcpClientUtil {
     }
 
  
-    public String receiveAndSend() throws IOException {
+    public String receiveAndSend(SendMessage  send) throws IOException {
     	
     	String  back=null;
 
@@ -67,7 +69,12 @@ public class TcpClientUtil {
 
            byte[] receiveBytes = {};// 收到的包字节数组
            
-           String sendpack="吴佳俊22jkjk";
+           
+           ObjectMapper  objectMapper = new ObjectMapper();  
+           String sendpack= objectMapper.writeValueAsString(send);
+           
+           
+        
            
       
            //  base64
@@ -183,10 +190,22 @@ public class TcpClientUtil {
  
 
     public static void main(String[] args) throws Exception {
+    	
+    	
+    	SendMessage  send= new SendMessage("010101", "张三", "10", "350322198210021012", "ZHANGSAN", "1", "350738", "1", "CN", "05918888568", "13314541433", "gutianlu", "350001", "1", "666	", "110");
+    	
+    	
+    	
 
-       TcpClientUtil client = new TcpClientUtil("192.168.1.53", 9190);
+       TcpClientUtil client = new TcpClientUtil("192.168.1.12", 9190);
 
-       System.out.println("返回的数据：：："+client.receiveAndSend());
+       System.out.println("返回的数据：：："+client.receiveAndSend(send));
+       
+       ObjectMapper mapper= new ObjectMapper();
+       
+       GetMessage  get =mapper.readValue(client.receiveAndSend(send), GetMessage.class);
+       System.out.println("backmessage="+get.getXYM());
+       
        
  
 //

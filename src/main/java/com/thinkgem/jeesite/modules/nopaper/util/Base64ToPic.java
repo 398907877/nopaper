@@ -12,6 +12,9 @@ import sun.misc.BASE64Decoder;
 import sun.misc.BASE64Encoder;
 
 public class Base64ToPic {
+	
+	
+
 
  /**
   * 将文件转成base64 字符串
@@ -79,7 +82,7 @@ public class Base64ToPic {
  }
  
  public static void main(String[] args){
-     File file = new File("D:\\999999999999999999999999\\encode64.txt");
+     File file = new File("C:\\999999999999999999999999\\encode64.txt");
      System.out.println(txt2String(file));
      
      GenerateImage(txt2String(file));
@@ -104,7 +107,7 @@ public class Base64ToPic {
              }  
          }  
          //生成jpeg图片  
-         String imgFilePath = "D:\\999999999999999999999999\\encode641.png";//新生成的图片  
+         String imgFilePath = "C:\\999999999999999999999999\\encode641.jpg";//新生成的图片  
          OutputStream out = new FileOutputStream(imgFilePath);      
          out.write(b);  
          out.flush();  
@@ -117,7 +120,7 @@ public class Base64ToPic {
      }  
  }  
  
-
+ 
 
 
 }
